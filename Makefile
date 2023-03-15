@@ -10,6 +10,9 @@ Bestiole.o : Bestiole.h Bestiole.cpp
 Milieu.o : Milieu.h Milieu.cpp
 	g++ -Wall -std=c++11  -c Milieu.cpp -I .
 
+prevoyante.o : prevoyante.h prevoyante.cpp
+	g++ -Wall -std=c++11  -c prevoyante.cpp -I .	
+
 clean:
 	rm -rf *.o main
 

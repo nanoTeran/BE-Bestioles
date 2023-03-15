@@ -3,7 +3,6 @@
 #include <cstdlib>
 #include <ctime>
 
-
 const T    Milieu::white[] = { (T)255, (T)255, (T)255 };
 
 
@@ -16,7 +15,11 @@ Milieu::Milieu( int _width, int _height ) : UImg( _width, _height, 1, 3 ),
    std::srand( time(NULL) );
 
 }
-
+/*
+ Milieu::Milieu( Bestiole* strategy ) {
+        this->strategy = strategy;
+    }
+*/
 
 Milieu::~Milieu( void )
 {
@@ -38,12 +41,19 @@ void Milieu::step( void )
 
    } // for
 
-}
 
+}
+/*
+void Milieu::setBehavior(Prevoyante prev)
+void Milieu::setBehavior() //just set prevoyante behavior
+{
+  // to add more, insert if-else if
+  Bestiole_ = new prevoyante();
+}
+*/
 
 int Milieu::nbVoisins( const Bestiole & b )
 {
-
    int         nb = 0;
 
 

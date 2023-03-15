@@ -11,7 +11,6 @@ using namespace std;
 
 class Milieu;
 
-
 class Bestiole
 {
 
@@ -29,16 +28,24 @@ private :
    double            orientation;
    double            vitesse;
 
-   T               * couleur;
-
 private :
    void bouge( int xLim, int yLim );
+   virtual void behavior();  // create a virtual method to define color
+   
+
 
 public :                                           // Forme canonique :
+   T               *couleur;
+   
+   // arriver a implementer virtual action: 
+   
+
    Bestiole( void );                               // Constructeur par defaut
    Bestiole( const Bestiole & b );                 // Constructeur de copies
    ~Bestiole( void );                              // Destructeur
                                                    // Operateur d'affectation binaire par defaut
+   
+
    void action( Milieu & monMilieu );
    void draw( UImg & support );
 
@@ -49,6 +56,5 @@ public :                                           // Forme canonique :
    friend bool operator==( const Bestiole & b1, const Bestiole & b2 );
 
 };
-
-
 #endif
+
