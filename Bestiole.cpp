@@ -1,9 +1,9 @@
 #include "Bestiole.h"
-
 #include "Milieu.h"
 
 #include <cstdlib>
 #include <cmath>
+using namespace std;
 
 
 const double      Bestiole::AFF_SIZE = 8.;
@@ -11,7 +11,6 @@ const double      Bestiole::MAX_VITESSE = 10.;
 const double      Bestiole::LIMITE_VUE = 30.;
 
 int               Bestiole::next = 0;
-
 
 Bestiole::Bestiole( void )
 {
@@ -60,6 +59,10 @@ Bestiole::~Bestiole( void )
 
 }
 
+void Bestiole::behavior()
+{
+   cout << "setting behavior" << endl;
+}
 
 void Bestiole::initCoords( int xLim, int yLim )
 {
@@ -108,9 +111,9 @@ void Bestiole::bouge( int xLim, int yLim )
 
 void Bestiole::action( Milieu & monMilieu )
 {
-
    bouge( monMilieu.getWidth(), monMilieu.getHeight() );
-
+   behavior();
+   
 }
 
 
